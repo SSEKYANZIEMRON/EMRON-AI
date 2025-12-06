@@ -12,9 +12,12 @@
 
   <script src="https://cdn.vapi.ai/widget.js"></script>
   <script>
-    vapi.openChat({
-      assistantId: "59cf9a34-5921-4503-868f-d3b157c39f11",
-      apiKey: "d1716a9f-7ded-44f0-99da-1f4d1eb184b2"
+    window.addEventListener("load", function() {
+      vapi.openChat({
+        assistantId: "59cf9a34-5921-4503-868f-d3b157c39f11",
+        apiKey: "d1716a9f-7ded-44f0-99da-1f4d1eb184b2",
+        showWidget: true
+      });
     });
   </script>
 </body>
