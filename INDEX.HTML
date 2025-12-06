@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VIPI AI App</title>
+  <style>
+    body { font-family: Arial; background: #111; color: white; margin:0; padding:0; }
+    #chat { height: 80vh; overflow-y: auto; padding: 10px; }
+    #inputBar { display: flex; padding: 10px; background: #222; }
+    #msg { flex: 1; padding: 10px; border-radius:5px; border:none; outline:none; }
+    button { margin-left:10px; padding:10px 20px; background:red; color:white; font-weight:bold; border:none; border-radius:5px; cursor:pointer;}
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">VIPI AI</h2>
+
+  <div id="chat"></div>
+
+  <div id="inputBar">
+    <input id="msg" placeholder="Ask VIPI..." />
+    <button onclick="send()">Send</button>
+  </div>
+
+  <script src="https://cdn.vapi.ai/widget.js"></script>
+  <script>
+    function send() {
+      let message = document.getElementById("msg").value;
+      document.getElementById("chat").innerHTML += "<p><b>You:</b> " + message + "</p>";
+      vapi.openChat({ assistantId: "59cf9a34-5921-4503-868f-d3b157c39f11" });
+    }
+  </script>
+</body>
+</html>
